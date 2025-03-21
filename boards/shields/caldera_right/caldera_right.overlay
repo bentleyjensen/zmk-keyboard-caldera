@@ -1,4 +1,4 @@
-#include "../caldera.dtsi"
+#include "../caldera.overlay"
 
 &default_transform { 
     col-offset = <6>;

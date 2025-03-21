@@ -2,7 +2,7 @@
 if SHIELD_CALDERA_LEFT
 
 config ZMK_KEYBOARD_NAME
-    defaul "Caldera"
+    default "Caldera"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
