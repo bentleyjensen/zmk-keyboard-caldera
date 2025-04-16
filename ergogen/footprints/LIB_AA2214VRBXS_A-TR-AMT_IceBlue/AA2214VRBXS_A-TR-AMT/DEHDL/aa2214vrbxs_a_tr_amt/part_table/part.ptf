@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'AA2214VRBXS_A_TR_AMT'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Kingbright", "AA2214VRBXS/A-TR-AMT" (!) = "", "LEDM2214X130N", "LED Moulded", "604-AA2214VRBXSATRAT", "https://www.mouser.co.uk/ProductDetail/Kingbright/AA2214VRBXS-A-TR-AMT?qs=aVyJF2WnouQmcsYfKkdziQ%3D%3D", "Standard LEDs - SMD 2214 SMD LED Ice Blue", "http://www.kingbrightusa.com/images/catalog/SPEC/AA2214VRBXS-A-TR-AMT.pdf", "1.3 mm"
+END_PART
+
+END.

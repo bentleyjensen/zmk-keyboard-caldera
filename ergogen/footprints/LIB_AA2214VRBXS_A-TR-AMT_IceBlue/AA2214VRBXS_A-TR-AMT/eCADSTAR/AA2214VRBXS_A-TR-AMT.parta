@@ -1,0 +1,66 @@
+(Japanese_coding: sjis)
+(function "ECS_1029534"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-12-04-15:00:48)
+    (utime 2023-06-22-02:40:13)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "AA2214VRBXS_A-TR-AMT")
+)
+
+
+(pinAssign "ECS_1029534"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-12-04-15:00:48)
+    (utime 2023-06-22-02:40:13)
+    (interface
+        (port "1" (symbPinId 1) (portName "K") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "A") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_1029534")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "AA2214VRBXS_A-TR-AMT")
+)
+
+
+(part "AA2214VRBXS_A-TR-AMT"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2018-12-04-15:00:48)
+    (utime 2023-06-22-02:40:13)
+    (packageRef "AA2214VRBXS_A-TR-AMT")
+    (pinAssignRef "ECS_1029534")
+    (interface
+        (port "1" (symbPinId 1) (portName "K") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "A") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "YES")
+    (property "refDesPrefix" "LED")
+    (property "description" "Standard LEDs - SMD 2214 SMD LED Ice Blue")
+    (property "Mouser_Part_Number" "604-AA2214VRBXSATRAT")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Kingbright/AA2214VRBXS-A-TR-AMT?qs=aVyJF2WnouQmcsYfKkdziQ%3D%3D")
+    (property "Manufacturer_Name" "Kingbright")
+    (property "Manufacturer_Part_Number" "AA2214VRBXS/A-TR-AMT")
+    (property "Datasheet_Link" "http://www.kingbrightusa.com/images/catalog/SPEC/AA2214VRBXS-A-TR-AMT.pdf")
+    (property "compAreaTopHeight" 1.3)
+)
+
+

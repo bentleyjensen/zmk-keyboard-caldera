@@ -1,0 +1,93 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "RK73B2ATTD680J"
+   (description " Small size and light weight.   Excellent heat resistance and weather resistance are ensured by the use of metal glaze thick film.   High stability and high reliability with the triple-layer structure of electrode.   Applicable to various kinds of automatic mounters for taping, etc.   Suitable for both flow and reflow solderings.   Products with lead free termination meet EU-RoHS requirements. EU-RoHS regulation is not intended for Pb-glass contained in electrode, resistor element and glass.")
+   (family "RES")
+   (package "RESC2012X60N")
+   (attribute "Datasheet Link" "https://componentsearchengine.com/Datasheets/2/RK73B2ATTD680J.pdf")
+   (attribute "Geometry.Height" "0.6mm")
+   (attribute "Manufacturer_Name" "KOA Speer")
+   (attribute "Manufacturer_Part_Number" "RK73B2ATTD680J")
+   (attribute "Mouser Part Number" "")
+   (attribute "Mouser Price/Stock" "")
+   (attribute "Arrow Part Number" "RK73B2ATTD680J")
+   (attribute "Arrow Price/Stock" "https://www.arrow.com/en/products/rk73b2attd680j/koa-speer-electronics")
+   (gate
+    (symbol "RK73B2ATTD680J")
+    (pin "1" 1 PS)
+    (pin "2" 2 PS)
+   )
+  )
+  (symbol "RK73B2ATTD680J"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 50) (pt 500 50) (pt 500 -50) (pt 200 -50) (pt 200 50) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 700 0) (rot 0) (mir X) (visible true))
+    (name (pt 0 -10) (rot 0) (just TOP LEFT) (visible false))
+    (number (pt 0 10) (rot 0) (just BOTTOM LEFT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "RESC2012X60N"
+   (units MM)
+   (layer OCCA
+    (graphic
+     (stroke 0.05)
+     (path
+      (closed true)
+      (pt -1.725 0.95)
+      (pt 1.725 0.95)
+      (pt 1.725 -0.95)
+      (pt -1.725 -0.95)
+      (pt -1.725 0.95))))
+   (layer TASM
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -1 0.625)
+      (pt 1 0.625)
+      (pt 1 -0.625)
+      (pt -1 -0.625)
+      (pt -1 0.625))))
+   (layer TSLK
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed false)
+      (pt 0 0.525)
+      (pt 0 -0.525))))
+   (leg 1 (pt -1 0) (padstack 0))
+   (leg 2 (pt 1 0) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 0.95 1.4 0 0 90))
+   )
+   (model "RK73B2ATTD680J.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

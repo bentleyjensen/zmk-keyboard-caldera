@@ -1,0 +1,9 @@
+Manufacturer=Kingbright
+PartNumber=AA2214VRBXS/A-TR-AMT
+PartCategory=LED
+PackageCategory=LED Moulded
+PinCount=2
+Version=2.1
+Released=2018-12-04 15:00:48
+Downloaded=2025-04-02 21:25:58
+3D=N

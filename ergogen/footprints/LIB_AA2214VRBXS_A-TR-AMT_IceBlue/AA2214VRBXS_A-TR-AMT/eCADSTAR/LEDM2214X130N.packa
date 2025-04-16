@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "AA2214VRBXS_A-TR-AMT"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2023-06-22-02:40:16)
+    (mountForm default
+        (footprintRef "LEDM2214X130N")
+        (spec "System")
+    )
+)

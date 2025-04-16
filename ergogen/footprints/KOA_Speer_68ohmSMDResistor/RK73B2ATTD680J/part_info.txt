@@ -1,0 +1,9 @@
+Manufacturer=KOA Speer
+PartNumber=RK73B2ATTD680J
+PartCategory=Resistor
+PackageCategory=Resistor Chip
+PinCount=2
+Version=1.1
+Released=2025-04-03 05:14:52
+Downloaded=2025-04-04 06:27:45
+3D=Y

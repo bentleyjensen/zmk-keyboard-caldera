@@ -1,0 +1,396 @@
+meta:
+  engine: 4.1.0
+units:
+  px: cx + 2
+  py: cy + 2
+
+  pushX: (cx / 2)
+  pushY: (cy / 2)
+
+  padX: pushX + 2
+  padY: pushY + 2
+
+  pad: 2
+
+  spacing: 0.75
+
+  controllerW: 18.5
+  controllerH: 33.5
+  belowControllerH: 17
+  caseBorder: 1.5
+points:
+  key:
+    padding: cy + spacing
+    spread: cx + spacing
+  zones:
+    # Nets are named after pro micro
+    matrix:
+      columns:
+        first:
+          key:
+            stagger: 0
+            column_net: P2 
+        second:
+          key:
+            stagger: 0
+            column_net: P3 
+        third:
+          key:
+            stagger: 7
+            column_net: P4
+        fourth:
+          key:
+            stagger: 5
+            column_net: P5 
+        fifth:
+          key:
+            stagger: -6
+            column_net: P6
+        sixth:
+          key:
+            stagger: -3.0
+            column_net: P8
+      rows:
+        mod:
+          row_net: P1
+        bottom:
+          row_net: P0
+        home:
+          row_net: P21
+        top:
+          row_net: P20
+        num:
+          row_net: P19
+      anchor:
+        # Shift the PCB slightly to the right and down, otherwise it's weirdly positioned outside of the main sheet in KiCad
+        shift: [100, -150]
+  mirror:
+    ref: matrix_sixth_num
+    distance: 60
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      size: [14, 14]
+      fillet: 0
+  board_outline:
+    - what: polygon
+      operation: stack
+      fillet: 2
+      points:
+        # Top
+        - ref: matrix_first_num
+          shift: [-padX, padY]
+        - ref: matrix_second_num
+          shift: [pushX - pad, padY]
+        - ref: matrix_third_num
+          shift: [-pushX - pad, padY]
+        - ref: matrix_third_num
+          shift: [pushX - pad, padY]
+        - ref: matrix_fourth_num
+          shift: [-pushX - pad, padY]
+        - ref: matrix_fourth_num
+          shift: [padX, padY]
+        - ref: matrix_fifth_num
+          shift: [-pushX + pad, padY]
+        - ref: matrix_fifth_num
+          shift: [padX, padY]
+        - ref: matrix_sixth_num
+          shift: [-pushX + pad + 0.0001, padY]
+        - ref: matrix_sixth_num
+          shift: [(padX * 2.5) + 2, padY]
+        # Bottom
+        - ref: matrix_sixth_mod
+          shift: [(padX * 2.5) + 2, -padY]
+        - ref: matrix_sixth_mod
+          shift: [-pushX, -padY]
+        - ref: matrix_fifth_mod
+          shift: [pushX - pad, -padY]
+        - ref: matrix_fifth_mod
+          shift: [-padX, -padY]
+        - ref: matrix_fourth_mod
+          shift: [pushX - pad, -padY]
+        - ref: matrix_fourth_mod
+          shift: [-pushX + pad, -padY]
+        - ref: matrix_third_mod
+          shift: [pushX + pad, -padY]
+        - ref: matrix_third_mod
+          shift: [-pushX + pad, -padY]
+        - ref: matrix_second_mod
+          shift: [pushX + pad, -padY]
+        - ref: matrix_second_mod
+          shift: [-pushX + pad, -padY]
+        - ref: matrix_first_mod
+          shift: [-padX, -padY]
+
+        # Connect to top
+        - ref: matrix_first_num
+          shift: [-padX, -padY]
+
+  # Create a slightly larger version of board_outline for the case so that it can have room to go around the PCB
+  xl_board_outline:
+    - what: polygon
+      operation: stack
+      points:
+        # Top
+        - ref: matrix_first_num
+          shift: [-padX - caseBorder, padY + caseBorder]
+        - ref: matrix_second_num
+          shift: [pushX - pad - caseBorder, padY + caseBorder]
+        - ref: matrix_third_num
+          shift: [-pushX - pad - caseBorder, padY + caseBorder]
+        - ref: matrix_third_num
+          shift: [pushX - pad - caseBorder, padY + caseBorder]
+        - ref: matrix_fourth_num
+          shift: [-pushX - pad - caseBorder, padY + caseBorder]
+        - ref: matrix_fourth_num
+          shift: [padX + caseBorder, padY + caseBorder]
+        - ref: matrix_fifth_num
+          shift: [-pushX + pad + caseBorder, padY + caseBorder]
+        - ref: matrix_fifth_num
+          shift: [padX + caseBorder, padY + caseBorder]
+        - ref: matrix_sixth_num
+          # Won't fillet unless small num added. Bug?
+          shift: [-pushX + pad + 0.0001 + caseBorder, padY + caseBorder]
+        - ref: matrix_sixth_num
+          shift: [padX + caseBorder, padY + caseBorder]
+        # Bottom
+        - ref: matrix_sixth_mod
+          shift: [padX + caseBorder, -padY - caseBorder]
+        - ref: matrix_sixth_mod
+          shift: [-pushX - caseBorder, -padY - caseBorder]
+        - ref: matrix_fifth_mod
+          shift: [pushX - pad - caseBorder, -padY - caseBorder]
+        - ref: matrix_fifth_mod
+          shift: [-padX - caseBorder, -padY - caseBorder]
+        - ref: matrix_fourth_mod
+          shift: [pushX - pad - caseBorder, -padY - caseBorder]
+        - ref: matrix_fourth_mod
+          shift: [-pushX + pad + caseBorder, -padY - caseBorder]
+        - ref: matrix_third_mod
+          shift: [pushX + pad + caseBorder, -padY - caseBorder]
+        - ref: matrix_third_mod
+          shift: [-pushX + pad + caseBorder, -padY - caseBorder]
+        - ref: matrix_second_mod
+          shift: [pushX + pad + caseBorder, -padY - caseBorder]
+        - ref: matrix_second_mod
+          shift: [-pushX + pad + caseBorder, -padY - caseBorder]
+        - ref: matrix_first_mod
+          shift: [-padX - caseBorder, -padY - caseBorder]
+
+        # Connect to top
+        - ref: matrix_first_num
+          shift: [-padX - caseBorder, -padY]
+  xl_board_key_cutouts:
+    - name: xl_board_outline
+    - operation: subtract
+      name: keys
+pcbs:
+  reversible:
+    outlines:
+      main:
+        outline: board_outline
+    footprints:
+      choc_hotswap:
+        what: ceoloide/switch_choc_v1_v2
+        where: /^matrix_.*/
+        params:
+          include_keycap: false
+          reversible: true
+          include_corner_marks: true
+          include_choc_v1_led_cutout_marks: true
+          hotswap: true
+          locked_traces_vias: false
+          include_stabilizer_pad: false
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+        adjust:
+          rotate: 180
+      # Main diodes
+      diode_main:
+        what: ceoloide/diode_tht_sod123
+        where: /^matrix_.*/
+        params:
+          reversible: true
+          include_traces_vias: true
+          include_tht: true
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [8, 3]
+          rotate: -90
+      diode_route:
+        what: ceoloide/utility_router
+        where: true
+        params:
+          route: "f(8,3)(8, 0.9)"
+      # Controller
+      nice_nano:
+        what: ceoloide/mcu_nice_nano
+        where:
+          ref: matrix_sixth_top
+          shift: [19, 11.9]
+          rotate: 0
+        params:
+          reversible: true
+          include_traces: true
+          include_extra_pins: true
+          only_required_jumpers: true
+          use_rectangular_jumpers: false
+      # Display
+      nice_view:
+        what: ceoloide/display_nice_view
+        where:
+          ref: matrix_sixth_home
+          shift: [19,25]
+          rotate: 0
+        params:
+          reversible: true
+          include_traces: true
+          invert_jumpers_position: false
+          VCC: DISP_VCC # Route through switch
+          MOSI: P101
+          SCK: P102
+          CS: P107
+      # Battery jack
+      jstph:
+        what: ceoloide/battery_connector_jst_ph_2
+        where:
+          ref: matrix_fourth_home
+          shift: [-7, 5.5]
+          rotate: 90
+        params:
+            reversible: true
+      # Reset switch
+      switch_reset:
+        what: ceoloide/reset_switch_smd_side
+        where:
+          ref: matrix_sixth_home
+          shift: [27.5, 0]
+          rotate: -90
+        params: 
+          reversible: true
+          from: RST
+          to: GND 
+      # Battery on/off switch
+      battery_switch:
+        what: ceoloide/power_switch_smd_side
+        where:
+            ref: matrix_sixth_home
+            shift: [27.5, -9.5]
+            rotate: 0
+        params:
+            reversible: true
+            side: B
+            from: RAW
+            to: BAT_P
+      # Nice!View on/off switch
+      display_switch:
+        what: ceoloide/power_switch_smd_side
+        where:
+            ref: matrix_sixth_home
+            shift: [27.5, -19.5]
+            rotate: 0
+        params:
+            reversible: true
+            side: B
+            from: VCC
+            to: DISP_VCC
+      # LED on/off switch
+      # led_switch:
+      #   what: ceoloide/power_switch_smd_side
+      #   where:
+      #       ref: matrix_sixth_home
+      #       shift: [27.5, -29.5]
+      #       rotate: 0
+      #   params:
+      #       reversible: true
+      #       side: B
+      #       from: led_vcc
+      #       to: VCC
+      # Status LEDs
+      led_status_power:
+        what: ceoloide/led_sk6812mini-e
+        where:
+          ref: matrix_sixth_home
+          shift: [20, -19]
+          rotate: -90
+        params:
+          P2: led_one_dout
+          P4: P9
+          reversible: true
+          reverse_mount: true # Shine through pcb
+          include_keepout: true
+          include_traces_vias: true
+      led_status_USB:
+        what: ceoloide/led_sk6812mini-e
+        where:
+          ref: matrix_sixth_home
+          shift: [20, -29]
+          rotate: -90
+        params:
+          P2: led_two_dout
+          P4: led_one_dout
+          reversible: true
+          reverse_mount: true # Shine through pcb
+          include_keepout: true
+          include_traces_vias: false
+      led_status_BT:
+        what: ceoloide/led_sk6812mini-e
+        where:
+          ref: matrix_sixth_home
+          shift: [20, -39]
+          rotate: -90
+        params:
+          P2: led_three_dout
+          P4: led_two_dout
+          reversible: true
+          reverse_mount: true # Shine through pcb
+          include_keepout: true
+          include_traces_vias: true
+
+#       # Per-Key LEDs
+#       led_matrix:
+#         what: ceoloide/led_sk6812mini-e
+#         where: /^matrix_.*/
+#         params:
+#           P2: led_dout
+#           P4: led_din
+#           reversible: true
+#           reverse_mount: true # Shine through pcb
+#           include_keepout: true
+#           include_traces_vias: true
+#         adjust:
+#           shift: [0,4.75]
+#           rotate: 0
+
+      # Mounting holes
+      hole_bottom_right:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_fifth_mod
+          shift: [-pushX + 1.5, pushY]
+      hole_bottom_left:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_first_bottom
+          shift: [pushX, -pushY]
+      hole_top_left:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_second_num
+          shift: [-pushX, -pushY]
+      hole_top_right:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_fifth_top
+          shift: [-pushX + 1.5, pushY]
+      hole_center:
+        what: ceoloide/mounting_hole_npth
+        where:
+          ref: matrix_fourth_bottom
+          shift: [-pushX + 2, pushY - 2]
+# cases:
+#   plate:
+#     - name: xl_board_key_cutouts
+#       extrude: 1.2

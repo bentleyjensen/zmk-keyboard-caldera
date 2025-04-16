@@ -1,0 +1,68 @@
+(Japanese_coding: sjis)
+(function "ECS_1254314"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2025-04-03-05:14:52)
+    (utime 2025-04-03-05:14:52)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "RK73B2ATTD680J")
+)
+
+
+(pinAssign "ECS_1254314"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2025-04-03-05:14:52)
+    (utime 2025-04-03-05:14:52)
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_1254314")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "RK73B2ATTD680J")
+)
+
+
+(part "RK73B2ATTD680J"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2025-04-03-05:14:52)
+    (utime 2025-04-03-05:14:52)
+    (packageRef "RK73B2ATTD680J")
+    (pinAssignRef "ECS_1254314")
+    (interface
+        (port "1" (symbPinId 1) (portName "1") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "2") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "R")
+    (property "description" " Small size and light weight.   Excellent heat resistance and weather resistance are ensured by the use of metal glaze thick film.   High stability and high reliability with the triple-layer structure of electrode.   Applicable to various kinds of automatic mounters for taping, etc.   Suitable for both flow and reflow solderings.   Products with lead free termination meet EU-RoHS requirements. EU-RoHS regulation is not intended for Pb-glass contained in electrode, resistor element and glass.")
+    (property "Manufacturer_Name" "KOA Speer")
+    (property "Manufacturer_Part_Number" "RK73B2ATTD680J")
+    (property "Mouser_Part_Number" "")
+    (property "Mouser_Price/Stock" "")
+    (property "Arrow_Part_Number" "RK73B2ATTD680J")
+    (property "Arrow_Price/Stock" "https://www.arrow.com/en/products/rk73b2attd680j/koa-speer-electronics")
+    (property "Datasheet_Link" "https://componentsearchengine.com/Datasheets/2/RK73B2ATTD680J.pdf")
+    (property "compAreaTopHeight" 0.6)
+)
+
+

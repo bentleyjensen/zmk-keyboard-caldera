@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'RK73B2ATTD680J'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "KOA Speer", "RK73B2ATTD680J" (!) = "", "RESC2012X60N", "Resistor Chip", "", "", "RK73B2ATTD680J", "https://www.arrow.com/en/products/rk73b2attd680j/koa-speer-electronics", " Small size and light weight.   Excellent heat resistance and weather resistance are ensured by the use of metal glaze thick film.   High stability and high reliability with the triple-layer structure of electrode.   Applicable to various kinds of automatic mounters for taping, etc.   Suitable for both flow and reflow solderings.   Products with lead free termination meet EU-RoHS requirements. EU-RoHS regulation is not intended for Pb-glass contained in electrode, resistor element and glass.", "https://componentsearchengine.com/Datasheets/2/RK73B2ATTD680J.pdf", "0.6 mm"
+END_PART
+
+END.
